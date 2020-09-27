@@ -1,7 +1,7 @@
-require 'pry'
+
 class Actor < ActiveRecord::Base
-  has_many :charaters
-  has_many :shows, through: :characters
+  has_many :characters
+  has_many :shows, through: :character
 
   def full_name
     self.first_name + " " + self.last_name
@@ -12,5 +12,7 @@ class Actor < ActiveRecord::Base
       "#{character.name} - #{character.show.name}"
     end
   end
+
+
 
 end
